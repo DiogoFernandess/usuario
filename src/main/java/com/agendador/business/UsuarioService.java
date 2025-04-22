@@ -4,6 +4,7 @@ import com.agendador.infrastructure.entity.Usuario;
 import com.agendador.infrastructure.exceptions.ConflictException;
 import com.agendador.infrastructure.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,11 @@ public class UsuarioService {
     public boolean verificaEmailExistente(String email) {
         return usuarioRepository.existsByEmail(email);
     }
+    public Usuario buscaUsuarioPorEmail(String email){
+        return usuarioRepository.findByEmail(email).orElseThrow(
+                () -> new ResourceNotFoundException("Email não encontrado" + email));
 
+    }
+    public void deletaUsuarioPorEmail(String email){ usuarioRepository.deletaByEmail(email);}
 }
 
