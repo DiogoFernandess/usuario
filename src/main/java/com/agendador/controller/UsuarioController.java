@@ -1,7 +1,7 @@
 package com.agendador.controller;
 
 import com.agendador.business.UsuarioService;
-import com.agendador.controller.dtos.UsuarioDTO;
+import com.agendador.business.dtos.UsuarioDTO;
 import com.agendador.infrastructure.entity.Usuario;
 import com.agendador.infrastructure.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.Authenticator;
-
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
@@ -26,8 +24,8 @@ public class UsuarioController {
     private final JwtUtil jwtUtil;
 
     @PostMapping
-    public ResponseEntity<Usuario> salvaUsuario (@RequestBody Usuario usuario){
-        return ResponseEntity.ok(usuarioService.salvaUsuario(usuario));
+    public ResponseEntity<UsuarioDTO> salvaUsuarioDTO (@RequestBody UsuarioDTO usuarioDTO){
+        return ResponseEntity.ok(usuarioService.salvaUsuario(usuarioDTO));
     }
 
     @PostMapping("/login")
