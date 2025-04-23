@@ -23,14 +23,14 @@ public class UsuarioController {
     private final JwtUtil jwtUtil;
 
     @PostMapping
-    public ResponseEntity<UsuarioDTO> salvaUsuario (@RequestBody UsuarioDTO usuarioDTO){
+    public ResponseEntity<Usuario> salvaUsuario (@RequestBody UsuarioDTO usuarioDTO){
         return ResponseEntity.ok(usuarioService.salvaUsuario(usuarioDTO));
     }
 
     @PostMapping("/login")
     public String login(@RequestBody UsuarioDTO usuarioDTO){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(usuarioDTO.getEmail(), usuarioDTO.getSenha()));
-        return jwtUtil.generateToken(authentication.getName());
+        return "Bearer" + jwtUtil.generateToken(authentication.getName());
     }
     @GetMapping
     public ResponseEntity<Usuario> buscaUsuarioPorEmail(@RequestParam("email")String email){
