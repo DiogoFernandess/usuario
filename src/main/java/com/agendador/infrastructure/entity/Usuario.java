@@ -25,7 +25,7 @@ public class Usuario implements UserDetails {
     private Long id;
     @Column(name = "nome", length = 100)
     private String nome;
-    @Column(name = "senha"   , length = 20)
+    @Column(name = "senha")
     private String senha;
     @Column(name = "email", length = 100)
     private String email;
