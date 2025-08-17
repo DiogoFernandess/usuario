@@ -1,9 +1,7 @@
 package com.agendador.infrastucture.entity;
 
-import  jakarta.persistence.*;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -11,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table (name = "telefone")
-
+@Builder
 public class Telefone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
