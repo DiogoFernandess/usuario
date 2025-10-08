@@ -5,6 +5,7 @@ import com.agendador.business.converter.UsuarioConverter;
 import com.agendador.business.dto.EnderecoDTO;
 import com.agendador.business.dto.TelefoneDTO;
 import com.agendador.business.dto.UsuarioDTO;
+import com.agendador.infrastucture.Client.ViaCepDTO;
 import com.agendador.infrastucture.entity.Endereco;
 import com.agendador.infrastucture.entity.Telefone;
 import com.agendador.infrastucture.entity.Usuario;
@@ -123,5 +124,4 @@ public class UsuarioService {
         return usuarioConverter.paraTelefoneDTO(
                 telefoneRepository.save(telefone));
     }
-
 }
