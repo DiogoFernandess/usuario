@@ -33,7 +33,7 @@ A API foi construída com as seguintes tecnologias e bibliotecas:
 * **[Spring Data JPA](https://spring.io/projects/spring-data-jpa):** Facilita a implementação da camada de persistência de dados.
 * **[PostgreSQL](https://www.postgresql.org/):** Banco de dados relacional utilizado para a persistência dos dados da aplicação.
 * **[JWT (JSON Web Token)](https://jwt.io/):** Utilizado para a criação e validação dos tokens de autenticação, permitindo uma comunicação stateless e segura.
-* **[Maven](https://maven.apache.org/):** Ferramenta para gerenciamento de dependências e build do projeto.
+* **[Gradle](https://gradle.org/):** Ferramenta para gerenciamento de dependências e build do projeto.
 * **[Lombok](https://projectlombok.org/):** Biblioteca para reduzir a verbosidade do código (boilerplate) com anotações.
 
 ---
